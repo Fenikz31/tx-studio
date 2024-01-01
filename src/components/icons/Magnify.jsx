@@ -2,7 +2,6 @@ import React from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
 export default function Magnify( props ) {
-  console.log(props)
   return (
     <SvgIcon { ...props }>
       <svg

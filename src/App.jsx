@@ -1,22 +1,37 @@
 import { useState } from 'react'
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Pagination from '@mui/material/Pagination';
+import PaginationItem from '@mui/material/PaginationItem';
 import Paper from '@mui/material/Paper';
+import Select from '@mui/material/Select';
+import Slider from '@mui/material/Slider';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { Button, Card, CardMedia, FormControlLabel, Menu, MenuItem, Pagination, PaginationItem, Select, Slider, TextField, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 
 import Camera from '@mui/icons-material/PhotoCamera';
+import CheckBox from '@mui/icons-material/CheckBox';
 import Notifications from '@mui/icons-material/Notifications';
 
 import Header from '@components/Header';
+import SocialBanner from '@components/SocialBanner';
 import Title from '@components/Title';
 
-import FavoriteEmpty from '@icons/FavoriteEmpty';
 import EnveloppeFull from '@icons/Enveloppe';
+import FavoriteEmpty from '@icons/FavoriteEmpty';
 import Magnify from '@icons/Magnify';
-import { CheckBox } from '@mui/icons-material';
+import Phone from '@icons/Phone';
+
+import Logo from '@assets/Logo.png'
 
 function App() {
   const { palette } = useTheme();
@@ -286,8 +301,8 @@ function App() {
                   >
                     <Camera />
                     <Typography fontSize={ 14 } variant="subtitle2">
-                    { product.pictures }
-                  </Typography>
+                      { product.pictures }
+                    </Typography>
                   </Box>
                   : null
                 }
@@ -505,6 +520,7 @@ function App() {
     <>
       <Header />
       <Container
+        id='body'
         sx={{
           height: '100%'
         }}
@@ -608,6 +624,182 @@ function App() {
                 Prendre rendez-vous avec nos agents
               </Button>
               </Box>
+          </Box>
+        </Box>
+      </Container>
+      <SocialBanner />
+      <Container
+        id='footer'
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            mb: 8,
+            mt: 8,
+            width: '100%'
+          }}
+        >
+          <Box
+            sx={{
+              width: 120
+            }}
+          >
+            <img src={ Logo } style={{
+              width: '100%'
+            }}/>
+          </Box>
+          <Box
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >            
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Acheter
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Louer
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Gestion
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Notre agence
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Contact
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >            
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Estimer
+            </Typography>
+            <Typography fontSize={ 16 } variant="subtitle2">
+              En ligne
+            </Typography>
+            <Typography fontSize={ 16 } variant="subtitle2">
+              En agence
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } marginTop={ 1 } variant="subtitle2">
+              Investisseur
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } variant="subtitle2">
+              Entreprise
+            </Typography>
+            <Typography fontSize={ 16 } variant="subtitle2">
+              Louer
+            </Typography>
+            <Typography fontSize={ 16 } variant="subtitle2">
+              Acheter
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >            
+            <Typography fontSize={ 16 } fontWeight={ 600 } marginBottom={ 2 } variant='subtitle2'>
+              Nos honoraires
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } marginBottom={ 2 } variant='subtitle2'>
+              Mentions légales
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 600 } marginBottom={ 1 } variant='subtitle2'>
+              Contact
+            </Typography>
+            <Typography fontSize={ 16 } variant='subtitle2'>
+              Nous contacter du mardi au samedi
+            </Typography>
+            <Typography fontSize={ 16 } marginBottom={ 1 } variant='subtitle2'>
+              9h30-12h30 / 14h-19h
+            </Typography>
+            <Typography fontSize={ 16 } marginBottom={ 1 } variant='subtitle2'>
+              01 64 27 83 34
+            </Typography>
+            <Typography fontSize={ 16 } variant='subtitle2'>
+              contact@MiltryMoryOrpi.fr
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              width: 300
+            }}
+          >
+            <Phone color={ palette.button.primary } sx={{
+              marginBottom: 1.5
+            }} />
+            <Typography fontSize={ 16 } marginBottom={ 1 } variant='subtitle2'>
+              Téléphone: 01 64 27 83 34
+            </Typography>
+            <Typography fontSize={ 16 } fontWeight={ 700 } marginBottom={ 1 } variant='subtitle2'>
+              DES RECLAMATIONS?
+            </Typography>
+            <TextField
+              placeholder='Votre e-mail*'
+              fullWidth
+              InputProps={{
+                'aria-label': 'search',
+                style: {
+                  borderColor: palette.button.primary,
+                  borderRadius: 15,
+                  paddingRight: 4,
+                  backgroundColor: 'white',
+                  '&:hover': {
+                    borderColor: palette.button.primary
+                  }
+                }
+              }}
+              sx={{
+                alignItems: 'center',
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: 20,
+                  height: 32,
+                  '& fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                  '&:hover fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                },
+                marginBottom: 2
+              }}
+            />
+            <TextField
+              fullWidth
+              multiline
+              rows={ 3 }
+              sx={{
+                alignItems: 'center',
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: 5,
+                  '& fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                  '&:hover fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: palette.button.primary,
+                  },
+                },
+              }}
+            />
           </Box>
         </Box>
       </Container>

@@ -13,6 +13,8 @@ import { useTheme } from '@mui/material';
 import Magnify from '@assets/loupe.svg';
 import FavoriteFull from '@icons/FavoriteFull';
 
+import Logo from '@assets/Logo.png'
+
 const items = [
   { id: 'Acheter', selected: true },
   { id: 'Louer', selected: false },
@@ -45,6 +47,9 @@ export default function Header() {
       <AppBar
         color='default'
         position='sticky'
+        sx={{
+          backgroundColor: '#FFFFFF'
+        }}
       >
         <Toolbar
           sx={{
@@ -55,7 +60,15 @@ export default function Header() {
           <Typography
             variant='h6'
           >
-            LOGO
+            <Box
+            sx={{
+              width: 120
+            }}
+            >
+              <img src={ Logo } style={{
+                width: '100%'
+              }}/>
+            </Box>
           </Typography>
           <Box
             sx={{

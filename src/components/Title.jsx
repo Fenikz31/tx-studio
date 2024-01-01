@@ -7,8 +7,8 @@ export default function Title({ children }) {
       sx={{
         display: 'flex',
         alignItems: 'flex-end',
-        justifyContent: 'space-between' ,
-        mt: 8      
+        justifyContent: 'space-between',
+        mt: 8
       }}
     >
       <Box
